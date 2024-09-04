@@ -1,4 +1,5 @@
-import { binarySearch, binarySearchRecursive } from "./binarysearch.js";
+import { binarySearch } from "./binarysearch.js";
+import { binarySearchRecursive } from "./binarysearch_recursive.js";
 
 let valuesArray = [21, 22, 23, 25, 27, 28, 29, 31, 32, 34, 35, 40];
 main();
@@ -46,14 +47,12 @@ function findValue(e) {
   if (!isNaN(Number(searchValue))) {
     searchValue = Number(searchValue);
   }
-  //   const searchValue = +e.target.search.value;
   console.log("search value:", searchValue);
+
+  // Use either recursive or iterative:
 
   //   const {middle, iterations} = binarySearchRecursive(searchValue, valuesArray, 0, valuesArray.length);
   const { middle, iterations } = binarySearch(searchValue, valuesArray);
-
-  console.log("foundindex:", middle);
-
   document.querySelector("#result-container").hidden = false;
 
   if (middle == -1) {
