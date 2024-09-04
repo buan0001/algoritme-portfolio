@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Binary search</title>
+  </head>
+  <body>
+    <h1>Binary search in action</h1>
+    <form id="search">
+      <label for="search">Get the index of a value in the array: <input name="search" /></label>
+      <button>Search</button>
+    </form>
+    <div id="result-container" hidden>The index was: <span id="search-result"></span></div>
+    <div id="array-container">Looking in this array: [<span id="array-display"></span>]</div>
+    <div>Want to use a different array? Enter it comma seperated below</div>
+    <form id="array-input">
+      <label for="input"
+        >New array:
+        <input name="input" type="text" />
+      </label>
+      <button>Update array</button>
+    </form>
+  </body>
+  <script src="test_binarysearch.js" type="module"></script>
+</html>
