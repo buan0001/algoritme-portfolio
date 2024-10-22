@@ -1,4 +1,3 @@
-
 export default class Queue {
   head = null;
   tail = null;
@@ -51,13 +50,12 @@ export default class Queue {
       this.tail = null;
     }
 
-    return temp
+    return temp;
   }
 
   peek() {
     return this.head;
   }
-
 
   get(index) {
     let current = this.head;
@@ -69,6 +67,7 @@ export default class Queue {
     }
     return current;
   }
+
 
   size() {
     let current = this.head;
@@ -82,14 +81,14 @@ export default class Queue {
   }
   dumpList() {
     let current = this.head;
-    let printString = ""
+    let printString = "";
     while (current) {
       // console.log(current.data);
-      printString += `${current.data} `
+      printString += `${current.data} `;
       current = current.next;
     }
     console.log(printString);
-    
+    return printString;
   }
 }
 

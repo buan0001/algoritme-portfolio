@@ -1,5 +1,6 @@
 import Queue from "./Queue.js";
 import Stack from "./Stack.js";
+import calculate from "./calcRPN.js";
 
 function convertInfixToPostfix(infixString) {
   console.log("Infix string:", infixString);
@@ -13,7 +14,6 @@ function convertInfixToPostfix(infixString) {
   tempInput.forEach((element) => {
     inputQueue.enqueue(element);
   });
-
 
   const precedence = {
     "(": 4,
@@ -75,6 +75,25 @@ function convertInfixToPostfix(infixString) {
 
   console.log("Postfix string:");
   outputQueue.dumpList();
+  let postfixString = "";
+
+  for (let index = 0; true; index++) {
+    const nextSymbol = outputQueue.get(index++);
+
+    console.log("node:", nextSymbol);
+    if (nextSymbol) {
+      console.log("data:", nextSymbol.data);
+      //   postfixString.concat(postfixString, `${nextSymbol.data.toString()} `);
+      postfixString += `${nextSymbol.data.toString()} `;
+    } else {
+      break;
+    }
+  }
+
+  const test = outputQueue.dumpList();
+  
+  console.log(calculate(test));
+  console.log("Using post fix string:", test);
 }
 
 // convertInfixToPostfix("( 1 + 2 ) ^ 2");
