@@ -46,7 +46,6 @@ function convertInfixToPostfix(infixString) {
         const topOperator = operatorStack.pop().data;
         outputQueue.enqueue(topOperator);
       }
-      // Finally, push the new operator to the operator stack
 
       if (inputSymbol == ")") {
         while (operatorStack.peek() && operatorStack.peek().data != "(") {
@@ -57,6 +56,7 @@ function convertInfixToPostfix(infixString) {
         // ... or the list is empty and it's an invalid argument, but it still shouldn't crash the program
         operatorStack.pop();
       } else {
+        // Finally, push the new operator to the operator stack
         operatorStack.push(inputSymbol);
       }
     }
@@ -80,9 +80,9 @@ function convertInfixToPostfix(infixString) {
   for (let index = 0; true; index++) {
     const nextSymbol = outputQueue.get(index++);
 
-    console.log("node:", nextSymbol);
+    
     if (nextSymbol) {
-      console.log("data:", nextSymbol.data);
+      
       //   postfixString.concat(postfixString, `${nextSymbol.data.toString()} `);
       postfixString += `${nextSymbol.data.toString()} `;
     } else {
@@ -91,9 +91,9 @@ function convertInfixToPostfix(infixString) {
   }
 
   const test = outputQueue.dumpList();
-  
-  console.log(calculate(test));
+
   console.log("Using post fix string:", test);
+  console.log("Is equal to:",calculate(test));
 }
 
 // convertInfixToPostfix("( 1 + 2 ) ^ 2");

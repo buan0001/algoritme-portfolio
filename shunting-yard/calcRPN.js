@@ -1,6 +1,6 @@
 export default function calculate(string) {
   const tempArr = string.trim().split(" ");
-  console.log("\n===============\n");
+  // console.log("\n===============\n");
   
 
   const inputQueue = tempArr.map((string) => {
@@ -13,12 +13,12 @@ export default function calculate(string) {
     return convertedToNum;
   });
 
-  console.log(inputQueue);
+  // console.log(inputQueue);
 
   const resultStack = [];
 
   while (inputQueue.length > 0) {
-    console.log("result stack:", resultStack);
+    // console.log("result stack:", resultStack);
 
     const shiftedElement = inputQueue.shift();
 
@@ -29,7 +29,7 @@ export default function calculate(string) {
     }
   }
 
-  console.log("Result is:", resultStack[0]);
+  // console.log("Result is:", resultStack[0]);
 
   function doOperation(operation) {
     // console.log("operation is:", operation);
@@ -38,7 +38,7 @@ export default function calculate(string) {
 
     const secondNumber = resultStack.pop();
 
-    console.log("Handling operation:", operation, "First:", firstNumber, "Second:", secondNumber);
+    // console.log("Handling operation:", operation, "First:", firstNumber, "Second:", secondNumber);
 
     if (firstNumber && secondNumber) {
       switch (operation) {
