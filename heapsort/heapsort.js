@@ -1,4 +1,4 @@
-function heapSort(arrayToSort) {
+export default function heapSort(arrayToSort) {
   console.log("Pre sorted array:", arrayToSort);
 
   heapify(arrayToSort); // Create a max heap from the unsorted array
@@ -76,6 +76,3 @@ function swap(arr, index1, index2) {
   arr[index1] = arr[index2];
   arr[index2] = tempValue;
 }
-
-const randomArr = [4, 2, 6, 9, 1, 4, 2, 3, 7, 6];
-heapSort(randomArr);
